@@ -1,0 +1,5 @@
+zsh-users/zsh-syntax-highlighting
+jeffreytse/zsh-vi-mode
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+marlonrichert/zsh-autocomplete

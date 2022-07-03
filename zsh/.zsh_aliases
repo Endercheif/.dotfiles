@@ -1,0 +1,56 @@
+
+alias gay="yay"
+
+alias free="free -h"
+alias rm="rm -I"
+
+alias exa="exa --color=always --icons --classify --group-directories-first --group"
+
+case "$OSTYPE" in
+
+    linux*)
+        alias ls="ls -N --color=auto"
+        alias grep="grep --color=auto"
+        alias dir='dir --color=auto'
+        ;;
+    darwin*)
+        alias ls="ls -N -G"
+        alias grep="grep -G"
+        alias dir="dir -G"
+        ;;
+esac
+
+alias l="exa"
+alias la="exa -a"
+
+DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+if [ "`type -p nvim`" ]; then    
+    alias vim=nvim
+fi
+
+if [ "`type -p pacman`" ]; then
+    alias update="sudo pacman -Syu"
+elif [ "`type -p brew`" ]; then
+    alias update="brew update"
+elif [ "`type -p apt`" ]; then
+    alias update="sudo apt update && sudo apt upgrade"
+fi
+
+
+pyc() {
+    python3 -c $1
+}
+
+pyp() {
+    python3 -c "print($1)"
+}
+
+if [ "`type -p bat`" ]; then
+    alias cat=bat
+fi
+
+json() {
+    python -m json.tool $1 | cat --file-name $1
+}
+
