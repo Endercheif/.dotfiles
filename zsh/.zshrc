@@ -55,12 +55,12 @@ case "$OSTYPE" in
     ;;
 esac
 
-if [ "`type -p bat`" ]; then
+if [ "`command -v bat`" ]; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
 
-if [ "`type -p thefuck`" ]; then
+if [ "`command -v thefuck`" ]; then
     eval $(thefuck --alias)
 fi
 
