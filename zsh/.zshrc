@@ -44,7 +44,16 @@ fi
 export EDITOR=nvim
 export PAGER=less
 export BROWSER=firefox
-export TERMINAL=alacritty
+
+
+case "$OSTYPE" in
+    linux*)
+        export TERMINAL=alacritty
+    ;;
+    darwin*)
+        export TERMINAL=/Applications/iTerm.app
+    ;;
+esac
 
 if [ "`type -p bat`" ]; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
